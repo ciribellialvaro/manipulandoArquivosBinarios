@@ -44,7 +44,10 @@ namespace manipulandoArquivosBinarios
             //precisamos o serializador. Ele pega qualquer formato de dado, e converte para uma cadeia de Bytes
             BinaryFormatter encoderLista = new BinaryFormatter();
 
-            encoderLista.Serialize(streamLista, langs);
+            //encoderLista.Serialize(streamLista, langs);
+
+            List<string> listadoArquivo = (List<String>)encoder.Deserialize(streamLista);
+            Console.WriteLine(listadoArquivo[1]);
 
             streamLista.Close();
 
